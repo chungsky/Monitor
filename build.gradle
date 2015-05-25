@@ -1,0 +1,23 @@
+group 'sk.com'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+compileJava {
+
+    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://repo.bodar.com/"
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile fileTree(dir: 'src/main/libs', include: ['*.jar'])
+    compile group:'com.googlecode.totallylazy', name:'totallylazy', version:'1.71'
+}
